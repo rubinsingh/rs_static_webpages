@@ -15,20 +15,5 @@
     }
     branch.init('key_live_oovEZkI6mGkEn1mVW89uaajlztmoCKJN', initCallback);
 </script>
-
-<h1>Bug Description</h1>
-
-<p>
-<ol>
-    <li> Emulate an iOS device in incognito mode through Chrome </li>
-    <li> Navigate to https://q1uy.app.link/u4pRYyG9ZE </li>
-    <li> In javascript console you'll see deep link data from the link click in 2 </li>
-    <li> Refresh the page and notice that you'll get deep link data from the link click in 2 </li>
-    <li> Expected: +clicked_branch_link : false in step 4 </li>
-    <li> Actual: Deeplink data from link click in step 2 appears in params delivered to Deeplink handler </li>
-</ol>
-Note: It doesn't matter if you're using the older version of the WebSDK or the new version of the WebSDK from master.
-</p>
-<br>
 </body>
 </html>
