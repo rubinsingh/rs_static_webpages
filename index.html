@@ -1,7 +1,34 @@
 <html>
 <head>
-<title>First Journey Ever</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beta Test for Marketing Links</title>
 </head>
-<body></body>
+<body>
+<script type="text/javascript">
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+
+    var initCallback = function(err, data) {
+	    console.log('quicklinksStaging.html');
+	    if(data) {
+		    console.log(data);
+	    }
+    }
+    branch.init('key_live_oovEZkI6mGkEn1mVW89uaajlztmoCKJN', initCallback);
+</script>
+
+<h1>Bug Description</h1>
+
+<p>
+<ol>
+    <li>Click on https://q1uy.app.link/u4pRYyG9ZE</li>
+    <li>Open up Javascript console</li>
+    <li>Notice that you'll see deep link data from the link click</li>
+    <li>Refresh the page and notice that you'll get deep link data from step 3</li>
+    <li>Expected: +clicked_branch_link : false in step 4</li>
+    <li>Actual: Deeplink data from step 3 appears in </li>
+</ol>
+Note: It doesn't matter if you're using the older version of the WebSDK or the new version of the WebSDK from master.
+</p>
+<br>
+</body>
 </html>
