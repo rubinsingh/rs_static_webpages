@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Geo-targeting example</title>
+</head>
+<body>
+<script type="text/javascript">
+	var options = {
+		enableHighAccuracy: true,
+		timeout: 5000,
+		maximumAge: 0
+	};
+
+    function success(pos) {
+    	alert(JSON.stringify(pos));
+    }
+    function error(err) {
+        var message = err.code + " " + err.message;
+    	alert(message);
+    }
+    function initMap() {
+	    navigator.geolocation.getCurrentPosition(success, error, options);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxfb3xPzuPGxbec9c0haoYtg1CLV1KHVY&callback=initMap"
+        async defer></script>
+</body>
+</html>
