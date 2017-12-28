@@ -22,7 +22,7 @@
 		if (status === 'OK') {
 			if (results[2]) {
 				if(results[2].address_components) {
-					console.log(results[2].address_components[1]);
+					console.log(results[2].address_components[1].long_name.replace(' ', ''));
 				}
 			} else {
 				window.alert('No results found');
