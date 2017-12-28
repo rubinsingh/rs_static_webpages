@@ -4,14 +4,14 @@
 </head>
 <body>
 <script type="text/javascript">
-	var options = {
-		enableHighAccuracy: true,
-		timeout: 5000,
-		maximumAge: 0
-	};
+    var options = {
+	    enableHighAccuracy: true,
+	    timeout: 5000,
+	    maximumAge: 0
+    };
 	
     function initBranch(city) {
-	branch.init('key_live_gimC2ehxzwjHcbyQzXQxfdmpvzcgkwsC', { metadata: { 'location':city } });
+	branch.init('key_live_gimC2ehxzwjHcbyQzXQxfdmpvzcgkwsC', { metadata: { 'location': city } });
     }
 
     function success(pos) {
@@ -36,15 +36,12 @@
 		}
   	});
     }
-    function getCity() {
-    
-    }
     function error(err) {
-        var message = err.code + " " + err.message;
-    	alert(message);
+        var message = "error code: " + err.code + " message: " + err.message;
+    	window.alert(message);
     }
     function initMap() {
-	    navigator.geolocation.getCurrentPosition(success, error, options);
+	navigator.geolocation.getCurrentPosition(success, error, options);
     }
 </script>
 <script>
