@@ -16,6 +16,23 @@
 	console.log(`Latitude : ${crd.latitude}`);
 	console.log(`Longitude: ${crd.longitude}`);
 	console.log(`More or less ${crd.accuracy} meters.`);
+	var geocoder = new google.maps.Geocoder;
+	var latlng = {lat: parseFloat(crd.latitude), lng: parseFloat(crd.longitude)};
+	geocoder.geocode({'location': latlng}, function(results, status) {
+		if (status === 'OK') {
+			if (results[0]) {
+				console.log(results);
+				console.log(results[0].formatted_address);
+			} else {
+				window.alert('No results found');
+			}
+		} else {
+			window.alert('Geocoder failed due to: ' + status);
+		}
+  	});
+    }
+    function getCity() {
+    
     }
     function error(err) {
         var message = err.code + " " + err.message;
