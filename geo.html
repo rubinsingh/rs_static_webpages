@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<div id="loading"><img src="https://rubinsingh.github.io/rs_static_webpages/340.gif" alt="Smiley face" height="42" width="42"></div>
 <div id="geocodingresults"></div>
 <script type="text/javascript">
     var results = "";
@@ -29,7 +30,8 @@
 
 	function success(pos) {
 		var crd = pos.coords;
-
+		var loadingDiv = document.getElementById("loading");
+        document.body.removeChild(loadingDiv);
 	    appendTitle('Your current position is:');
 	    appendData('Latitude : ' + crd.latitude);
 	    appendData('Longitude: ' + crd.longitude);
