@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Geo-targeting example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="geocodingresults"></div>
@@ -33,7 +34,7 @@
 	    appendData('Latitude : ' + crd.latitude);
 	    appendData('Longitude: ' + crd.longitude);
 	    appendData('More or less ' + crd.accuracy + ' in meters');
-      commitResults();
+
 		var geocoder = new google.maps.Geocoder;
 		var latlng = {lat: parseFloat(crd.latitude), lng: parseFloat(crd.longitude)};
 		geocoder.geocode({'location': latlng}, function(results, status) {
