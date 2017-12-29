@@ -13,7 +13,7 @@
 		maximumAge: 0
 	};
     function appendTitle(title) {
-	    results += "<h5>" + data + "</h5>";
+	    results += "<h5>" + title + "</h5>";
     }
     function appendData(data) {
 	     results += "<h6>" + data + "</h6>";
@@ -41,6 +41,7 @@
 				if (results[2] && results[2].address_components && results[2].address_components[1] && results[2].address_components[1].long_name) {
 					var city = results[2].address_components[1].long_name.replace(' ', '');
 			        appendData('Your city is:  ${crd.longitude}');
+			        commitResults();
 					initBranch(city);
 				} else {
 					window.alert('No results found');
@@ -48,6 +49,7 @@
 			} else {
 				window.alert('Geocoder failed due to: ' + status);
 			}
+
 		});
 	}
 	function error(err) {
