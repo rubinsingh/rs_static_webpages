@@ -30,9 +30,9 @@
 		var crd = pos.coords;
 
 	    appendTitle('Your current position is:');
-	    appendData('Latitude : ${crd.latitude}');
-	    appendData('Longitude: ${crd.longitude}');
-	    appendData('More or less ${crd.accuracy} meters.');
+	    appendData('Latitude : ' + crd.latitude);
+	    appendData('Longitude: ' + crd.longitude);
+	    appendData('More or less ' + crd.accuracy + ' in meters');
 
 		var geocoder = new google.maps.Geocoder;
 		var latlng = {lat: parseFloat(crd.latitude), lng: parseFloat(crd.longitude)};
