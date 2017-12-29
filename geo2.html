@@ -8,16 +8,6 @@
 <script type="text/javascript">
     var results = "";
     var options = {
-		enableHighAccuracy: true
-<html>
-<head>
-    <title>Geo-targeting example</title>
-</head>
-<body>
-<div id="geocodingresults"></div>
-<script type="text/javascript">
-    var results = "";
-    var options = {
 		enableHighAccuracy: true,
 		timeout: 10000,
 		maximumAge: 0
@@ -68,65 +58,6 @@
 	}
 	function initMap() {
 		navigator.geolocation.getCurrentPosition(success, error, options);
-	}
-</script>
-<script>
-	(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent".split(" "), 0);
-
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxfb3xPzuPGxbec9c0haoYtg1CLV1KHVY&callback=initMap"
-        async defer></script>
-
-
-</div>
-</body>
-</html>
-		timeout: 10000,
-		maximumAge: 0
-	};
-    function appendTitle(title) {
-	    results += "<h5>" + title + "</h5>";
-    }
-    function appendData(data) {
-	     results += "<h6>" + data + "</h6>";
-     }
-     function commitResults() {
-	     document.getElementById("geocodingresults").innerHTML = results;
-     }
-
-	function initBranch(city) {
-		branch.init('key_live_gimC2ehxzwjHcbyQzXQxfdmpvzcgkwsC', { metadata: { 'location': city } });
-	}
-
-	function success(pos) {
-		var crd = pos.coords;
-
-	    appendTitle('Your current position is:');
-	    appendData('Latitude : ' + crd.latitude);
-	    appendData('Longitude: ' + crd.longitude);
-	    appendData('More or less ' + crd.accuracy + ' in meters');
-
-		var geocoder = new google.maps.Geocoder;
-		var latlng = {lat: parseFloat(crd.latitude), lng: parseFloat(crd.longitude)};
-		geocoder.geocode({'location': latlng}, function(results, status) {
-			if (status === 'OK') {
-				if (results[2] && results[2].address_components && results[2].address_components[1] && results[2].address_components[1].long_name) {
-					var city = results[2].address_components[1].long_name.replace(' ', '');
-			        appendData('Your city is: ' + city);
-			        commitResults();
-					initBranch(city);
-				} else {
-					window.alert('No results found');
-				}
-			} else {
-				window.alert('Geocoder failed due to: ' + status);
-			}
-
-		});
-	}
-	function error(err) {
-		var message = "error code: " + err.code + " message: " + err.message;
-		window.alert(message);
 	}
 </script>
 <script>
