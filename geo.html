@@ -42,7 +42,7 @@
 		geocoder.geocode({'location': latlng}, function(results, status) {
 			if (status === 'OK') {
 				if (results[2] && results[2].address_components && results[2].address_components[1] && results[2].address_components[1].long_name) {
-					var city = results[2].address_components[1].long_name.replace(' ', '');
+					var city = results[2].address_components[1].long_name.replace(/ /g, '');
 			        appendData('Your city is: ' + city);
 			        commitResults();
 					initBranch(city);
