@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>The web site of bqa</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <title>screensize</title>
   </head>
   <body>
+    <div id="display"> 
+    </div>
     <script>
-    alert(JSON.stringify(screen));
+      const obj = {};
+      obj.width = screen.width;
+      obj.height = screen.height;
+      obj.userAgent = navigator.userAgent;
+
+      document.getElementById("display").innerHTML = JSON.stringify(obj);
     </script>
   </body>
 </html>
